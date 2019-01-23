@@ -1,0 +1,8 @@
+#HOWTO:
+#
+# every line beggining not with '#' character will be appended to this statement as ${line} variable:
+# eb -r --buildpath=${easybuild_buildpath} ${custom_easybuilds_dir}/${line}
+#
+plc-2.0-intel2018b-Python-2.7.15.eb
+OpenCV-3.4.5-foss-2018b-Python-3.6.6.eb
+cadabra-2.2.4-foss-2018b.eb
