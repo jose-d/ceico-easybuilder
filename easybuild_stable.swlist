@@ -8,6 +8,7 @@
 #toolchains
 f/foss/foss-2018b.eb
 i/intel/intel-2018b.eb
+i/intel/intel-2019b.eb
 # f/fosscuda/fosscuda-2018b.eb	#FIXME: cuda broken, IDN why
 #Pythons - foss
 p/Python/Python-3.6.6-foss-2018b.eb
@@ -19,7 +20,6 @@ p/Python/Python-2.7.15-intel-2018b.eb
 # p/Python/Python-2.7.15-fosscuda-2018b.eb	#depends on cuda, so broken IDNwhy..
 #apps:
 m/Mathematica/Mathematica-11.3.0.eb
-g/git/git-2.19.1-GCCcore-7.3.0.eb
 #libs
 t/Tkinter/Tkinter-3.6.6-foss-2018b-Python-3.6.6.eb
 t/Tkinter/Tkinter-3.6.6-intel-2018b-Python-3.6.6.eb
@@ -42,6 +42,7 @@ h/HDF5/HDF5-1.10.2-intel-2018b.eb
 #tools
 c/CMake/CMake-3.12.1-GCCcore-7.3.0.eb
 c/cURL/cURL-7.60.0-GCCcore-7.3.0.eb
+g/git/git-2.19.1-GCCcore-7.3.0.eb
 #libs - CFITSIO
 c/CFITSIO/CFITSIO-3.45-intel-2018b.eb
 #libs - scalapack

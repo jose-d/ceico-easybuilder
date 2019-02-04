@@ -123,6 +123,9 @@ else
 fi
 
 if $rebuild || $noimage; then
+  if [ -f "${container_image_dir}/${singularity_image_name}" ]; then
+    rm -f ${container_image_dir}/${singularity_image_name}
+  fi
   cd ${container_image_dir}
   touch ${container_image_dir}/logs/git.log
   git clone ${singularity_image_git_URL} >> ${container_image_dir}/logs/git.log 2>&1
