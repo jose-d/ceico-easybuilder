@@ -124,6 +124,7 @@ fi
 
 if $rebuild || $noimage; then
   if [ -f "${container_image_dir}/${singularity_image_name}" ]; then
+    # if image is already there and there is --rebuild flag, remove the image first:
     rm -f ${container_image_dir}/${singularity_image_name}
   fi
   cd ${container_image_dir}
@@ -174,5 +175,12 @@ ${singularity_command} ${singularity_action} \
   -B ${eb_download_path}:/downloads \
   -B ${additional_bind_pair_1} \
   ${container_image_dir}/${singularity_image_name} \
-  /scripts/build.sh --easybuild_sourcepath /downloads --easybuild_buildpath ${easybuild_build_dir} --custom_easybuilds_dir /easybuild_custom/${custom_easyconfigs_dir}
+  /scripts/build.sh --easybuild_sourcepath /downloads \
+                    --easybuild_buildpath ${easybuild_build_dir} \
+                    --custom_easybuilds_dir /easybuild_custom/${custom_easyconfigs_dir}
+
+
 # CLEANUP
+
+rm -rf ${easybuild_build_dir}	# builddir - should be empty when build was OK.. but if not, lot of things could be there..
+rm -rf ${easybuild_dir}         # the one with git clones..
