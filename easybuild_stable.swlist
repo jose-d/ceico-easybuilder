@@ -7,6 +7,7 @@
 #
 #toolchains
 f/foss/foss-2018b.eb
+
 i/intel/intel-2018b.eb
 i/intel/intel-2019b.eb
 # f/fosscuda/fosscuda-2018b.eb	#FIXME: cuda broken, IDN why
@@ -47,6 +48,11 @@ g/git/git-2.19.1-GCCcore-7.3.0.eb
 c/CFITSIO/CFITSIO-3.45-intel-2018b.eb
 #libs - scalapack
 s/ScaLAPACK/ScaLAPACK-2.0.2-gompi-2018b-OpenBLAS-0.3.1.eb
+# IPython - to have jupyter
+i/IPython/IPython-7.2.0-foss-2018b-Python-3.6.6.eb
+
+
+
 #TBD? / check if no deps?
 #c/cURL/cURL-7.60.0-GCCcore-7.3.0.eb
 #p/Python/Python-3.7.0-intel-2018b.eb
