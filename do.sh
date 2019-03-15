@@ -133,6 +133,7 @@ if $rebuild || $noimage; then
   cd ${container_image_dir}/${singularity_image_git_projectname}
   touch ${container_image_dir}/logs/singularity.log
   echo "singularity command to be used: $singularity_command"
+  echo "..logging into ${container_image_dir}/logs/singularity.log"
   sudo ${singularity_command} build ${container_image_dir}/${singularity_image_name} ${container_image_dir}/${singularity_image_git_projectname}/${singularity_recipe_filename} >> ${container_image_dir}/logs/singularity.log 2>&1
   check_rc $? "singularity build"
   echo "singularity image build done."

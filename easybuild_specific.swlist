@@ -7,5 +7,10 @@ plc-2.0-intel2018b-Python-2.7.15.eb
 OpenCV-3.4.5-foss-2018b-Python-3.6.6.eb
 STREAM-5.10-GCCcore-8.2.0.eb
 fio-3.12-GCCcore-8.2.0.eb
-GTK+-3.22.30-foss-2018b.eb --hide-deps=Gtkmm,Pangomm,cairomm,at-spi2-atk,at-spi2-core,DBus,libdrm,nettle,GMP,libepoxy,libiconv,Pango,HarfBuzz,cairo,pixman,fontconfig,freetype,expat,Gdk-Pixbuf,Atkmm,ATK,GLibmm,libsigc++,libffi
-cadabra-2.2.4-foss-2018b.eb --hide-deps=LibUUID,Gtkmm,adwaita-icon-theme,gsettings-desktop-schemas
+IPython-5.8.0-intel-2018b-Python-2.7.15.eb
+astropy-2.0.12-foss-2018b-Python-2.7.15.eb
+
+
+
+#GTK+-3.22.30-foss-2018b.eb --hide-deps=Gtkmm,Pangomm,cairomm,at-spi2-atk,at-spi2-core,DBus,libdrm,nettle,GMP,libepoxy,libiconv,Pango,HarfBuzz,cairo,pixman,fontconfig,freetype,expat,Gdk-Pixbuf,Atkmm,ATK,GLibmm,libsigc++,libffi
+#cadabra-2.2.4-foss-2018b.eb --hide-deps=LibUUID,Gtkmm,adwaita-icon-theme,gsettings-desktop-schemas

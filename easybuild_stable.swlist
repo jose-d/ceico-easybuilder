@@ -6,10 +6,10 @@
 #   we can move to some more cultural way how to do it instead pasting subpaths..
 #
 #toolchains
-f/foss/foss-2018b.eb
+f/foss/foss-2018b.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils
 
 i/intel/intel-2018b.eb
-i/intel/intel-2019b.eb
+i/intel/intel-2019a.eb
 # f/fosscuda/fosscuda-2018b.eb	#FIXME: cuda broken, IDN why
 #Pythons - foss
 p/Python/Python-3.6.6-foss-2018b.eb
