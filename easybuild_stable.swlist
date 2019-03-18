@@ -14,11 +14,11 @@
 #
 #then FOSS toolchains:
 #
-f/foss/foss-2018b.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,Autoconf,OpenBLAS,Automake,libtool,ncurses,Autotools,xorg-macros,gettext,numactl,libpciaccess,XZ,libxml2,hwloc,FFTW,ScaLAPACK --hide-toolchains=GCCcore,gompi
-f/foss/foss-2019a.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,Autoconf,OpenBLAS,Automake,libtool,ncurses,Autotools,xorg-macros,gettext,numactl,libpciaccess,XZ,libxml2,hwloc,FFTW,ScaLAPACK --hide-toolchains=GCCcore,gompi
+f/foss/foss-2018b.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,Autoconf,OpenBLAS,Automake,libtool,ncurses,Autotools,xorg-macros,gettext,numactl,libpciaccess,XZ,libxml2,hwloc,FFTW,ScaLAPACK,GCCcore --hide-toolchains=gompi --dry-run
+f/foss/foss-2019a.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,Autoconf,OpenBLAS,Automake,libtool,ncurses,Autotools,xorg-macros,gettext,numactl,libpciaccess,XZ,libxml2,hwloc,FFTW,ScaLAPACK,GCCcore --hide-toolchains=gompi --dry-run
 #
 #then Intel toolchains:
 #
-i/intel/intel-2018b.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,impi,imkl,gettext --hide-toolchains=GCCcore,iimpi
-i/intel/intel-2019a.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,impi,imkl,gettext --hide-toolchains=GCCcore,iimpi
+i/intel/intel-2018b.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,impi,imkl,gettext,GCCcore --hide-toolchains=iimpi --dry-run
+i/intel/intel-2019a.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,impi,imkl,gettext,GCCcore --hide-toolchains=iimpi --dry-run
 
