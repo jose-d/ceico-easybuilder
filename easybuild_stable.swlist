@@ -6,19 +6,19 @@
 #   we can move to some more cultural way how to do it instead pasting subpaths..
 #
 #toolchains
-
+#
 #first, GCCcores toolchain:
-
-g/GCCcore/GCCcore-7.3.0.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,Autoconf,OpenBLAS,Automake,libtool,ncurses,Autotools,xorg-macros,gettext,numactl,libpciaccess,XZ,libxml2,hwloc
-g/GCCcore/GCCcore-8.2.0.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,Autoconf,OpenBLAS,Automake,libtool,ncurses,Autotools,xorg-macros,gettext,numactl,libpciaccess,XZ,libxml2,hwloc
-
+#
+#g/GCCcore/GCCcore-7.3.0.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,Autoconf,OpenBLAS,Automake,libtool,ncurses,Autotools,xorg-macros,gettext,numactl,libpciaccess,XZ,libxml2,hwloc
+#g/GCCcore/GCCcore-8.2.0.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,Autoconf,OpenBLAS,Automake,libtool,ncurses,Autotools,xorg-macros,gettext,numactl,libpciaccess,XZ,libxml2,hwloc
+#
 #then FOSS toolchains:
-
-f/foss/foss-2018b.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,Autoconf,OpenBLAS,Automake,libtool,ncurses,Autotools,xorg-macros,gettext,numactl,libpciaccess,XZ,libxml2,hwloc
-f/foss/foss-2019a.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,Autoconf,OpenBLAS,Automake,libtool,ncurses,Autotools,xorg-macros,gettext,numactl,libpciaccess,XZ,libxml2,hwloc
-
+#
+f/foss/foss-2018b.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,Autoconf,OpenBLAS,Automake,libtool,ncurses,Autotools,xorg-macros,gettext,numactl,libpciaccess,XZ,libxml2,hwloc,FFTW,ScaLAPACK --hide-toolchains=GCCcore,gompi
+f/foss/foss-2019a.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,Autoconf,OpenBLAS,Automake,libtool,ncurses,Autotools,xorg-macros,gettext,numactl,libpciaccess,XZ,libxml2,hwloc,FFTW,ScaLAPACK --hide-toolchains=GCCcore,gompi
+#
 #then Intel toolchains:
-
-i/intel/intel-2018b.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils
-i/intel/intel-2019a.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils
+#
+i/intel/intel-2018b.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,impi,imkl,gettext --hide-toolchains=GCCcore,iimpi
+i/intel/intel-2019a.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,impi,imkl,gettext --hide-toolchains=GCCcore,iimpi
 
