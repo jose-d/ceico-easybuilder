@@ -93,6 +93,8 @@ else
   exit 0
 fi
 
+exit 0 #TODO: exit for now..
+
 site_specific_list_file="${SCRIPTPATH}/easybuild_specific.swlist"
 echo "processing ${specific_list_file}"
 
