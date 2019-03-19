@@ -19,9 +19,17 @@ f/foss/foss-2019a.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,Autoconf,O
 #
 #then Intel toolchains:
 #
-i/intel/intel-2018b.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,impi,imkl,gettext,GCCcore --hide-toolchains=iimpi
-i/intel/intel-2019a.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,impi,imkl,gettext,GCCcore --hide-toolchains=iimpi
+i/intel/intel-2018b.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,impi,imkl,gettext,GCCcore,icc,ifort,iccifort --hide-toolchains=iimpi,iccifort
+i/intel/intel-2019a.eb --hide-deps=M4,zlib,help2man,Bison,flex,binutils,impi,imkl,gettext,GCCcore,icc,ifort,iccifort --hide-toolchains=iimpi,iccifort
+#
 #Pythons-foss:
 p/Python/Python-3.6.6-foss-2018b.eb -r --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,FFTW,flex,GCC,gettext,GMP,gompi,help2man,hwloc,libffi,libpciaccess,libreadline,libtool,libxml2,M4,ncurses,numactl,OpenBLAS,OpenMPI,ScaLAPACK,SQLite,Tcl,xorg-macros,XZ,zlib --hide-toolchains=gompi
+p/Python/Python-2.7.15-foss-2018b.eb -r --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,FFTW,flex,GCC,gettext,GMP,gompi,help2man,hwloc,libffi,libpciaccess,libreadline,libtool,libxml2,M4,ncurses,numactl,OpenBLAS,OpenMPI,ScaLAPACK,SQLite,Tcl,xorg-macros,XZ,zlib --hide-toolchains=gompi
 #Pythons-intel:
-p/Python/Python-2.7.15-intel-2018b.eb -r --hide-deps=ScaLAPACK,FFTW,gompi,OpenMPI,hwloc,libpciaccess,xorg-macros,libxml2,numactl,OpenBLAS,GMP,Autotools,libtool,GCC,Automake,Autoconf,XZ,gettext,ncurses,libffi,SQLite,libreadline,bzip2,Tcl,ncurses,binutils,Bison,gompi,GMP,GCC,libffi,SQLite,libreadline,bzip2,Tcl,ncurses,help2man,M4,flex,M4,help2man,zlib,M4,impi,iimpi,imkl --hide-toolchains=iimpi
+p/Python/Python-3.6.6-intel-2018b.eb -r --hide-deps=ScaLAPACK,FFTW,gompi,OpenMPI,hwloc,libpciaccess,xorg-macros,libxml2,numactl,OpenBLAS,GMP,Autotools,libtool,GCC,Automake,Autoconf,XZ,gettext,ncurses,libffi,SQLite,libreadline,bzip2,Tcl,ncurses,binutils,Bison,gompi,GMP,GCC,libffi,SQLite,libreadline,bzip2,Tcl,ncurses,help2man,M4,flex,M4,help2man,zlib,M4,impi,iimpi,imkl,icc,ifort,iccifort --hide-toolchains=iimpi,iccifort
+p/Python/Python-2.7.15-intel-2018b.eb -r --hide-deps=ScaLAPACK,FFTW,gompi,OpenMPI,hwloc,libpciaccess,xorg-macros,libxml2,numactl,OpenBLAS,GMP,Autotools,libtool,GCC,Automake,Autoconf,XZ,gettext,ncurses,libffi,SQLite,libreadline,bzip2,Tcl,ncurses,binutils,Bison,gompi,GMP,GCC,libffi,SQLite,libreadline,bzip2,Tcl,ncurses,help2man,M4,flex,M4,help2man,zlib,M4,impi,iimpi,imkl,icc,ifort,iccifort --hide-toolchains=iimpi,iccifort
+#IPython( it has non-hidden dep matplotlib)
+i/IPython/IPython-7.2.0-intel-2018b-Python-3.6.6.eb -r --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,CMake,cURL,expat,flex,fontconfig,freetype,GCCcore,gettext,GMP,gperf,help2man,ibpng,icc,iccifort,ifort,iimpi,imkl,impi,intltool,libffi,libreadline,libsodium,libtool,libxml2,M4,ncurses,OpenPGM,pkg-config,SQLite,Tcl,Tk,Tkinter,util-linux,X11,XML-Parser,XZ,ZeroMQ,zlib --hide-toolchains=iimpi
+i/IPython/IPython-7.2.0-foss-2018b-Python-3.6.6.eb -r --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,CMake,cURL,expat,flex,fontconfig,freetype,GCCcore,gettext,GMP,gperf,help2man,ibpng,icc,iccifort,ifort,iimpi,imkl,impi,intltool,libffi,libreadline,libsodium,libtool,libxml2,M4,ncurses,OpenPGM,pkg-config,SQLite,Tcl,Tk,Tkinter,util-linux,X11,XML-Parser,XZ,ZeroMQ,zlib --hide-toolchains=iimpi
+#Mathematica
+m/Mathematica/Mathematica-11.3.0.eb
