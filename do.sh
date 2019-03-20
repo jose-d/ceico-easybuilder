@@ -57,7 +57,7 @@ singularity_recipe_filename='container.def'
 singularity_image_name='container.img'
 
 # sw tree host directory
-sw_tree_host_dir='/mnt/shared-scratch/u/jose/666'
+sw_tree_host_dir='/mnt/local-scratch/u/jose/666'
 sw_tree_system_dir='/sw/local/el7/x86_64'	# = where on the system will be the SW tree finally mounted
 additional_bind_pair_1='/home/soft:/home/soft'	# for intel licensing server etc. if unsed, comment it out in the singularity statement too..
 
