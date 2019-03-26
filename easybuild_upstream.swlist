@@ -1,1 +1,6 @@
-Python-3.7.2-GCCcore-8.2.0.eb --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,easybuild_custom,flex,GCCcore,gettext,GMP,help2man,libffi,libreadline,libtool,M4,ncurses,SQLite,Tcl,XZ,zlib
+Python-3.7.2-GCCcore-8.2.0.eb --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,flex,GCCcore,gettext,GMP,help2man,libffi,libreadline,libtool,M4,ncurses,SQLite,Tcl,XZ,zlib
+Python-2.7.15-GCCcore-8.2.0.eb --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,flex,GCCcore,GMP,help2man,libffi,libreadline,libtool,M4,ncurses,Python,SQLite,Tcl,zlib
+Perl-5.28.1-GCCcore-8.2.0.eb --hide-deps=binutils,Bison,expat,flex,GCCcore,help2man,M4,zlib
+git-2.21.0-GCCcore-8.2.0.eb --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,cURL,expat,flex,GCCcore,gettext,help2man,libtool,libxml2,M4,ncurses,Perl,XZ,zlib
+Ninja-1.9.0-GCCcore-8.2.0.eb --hidden --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,flex,GCCcore,gettext,GMP,help2man,libffi,libreadline,libtool,M4,ncurses,Ninja,Python,SQLite,Tcl,XZ,zlib
+X11-20190311-GCCcore-8.2.0.eb --hidden --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,expat,flex,fontconfig,freetype,GCCcore,gettext,gperf,help2man,intltool,libpng,libtool,libxml2,M4,ncurses,Perl,pkg-config,util-linux,XZ,zlib
