@@ -103,11 +103,29 @@ our_script_path=$(dirname $our_script)
 
 mkdir -p ${container_image_dir}/logs
 
+# deal with custom easyblocks:
+
 cd ${easybuild_dir}
 touch ${easybuild_dir}/logs/git.log
-#git clone ${custom_easyblocks_git_URL} >> ${easybuild_dir}/logs/git.log 2>&1	#we don't care about easyblocks for now.
 git clone ${custom_easyconfigs_git_URL} >> ${easybuild_dir}/logs/git.log 2>&1
-echo "git repositories clone done"
+
+# git clone to have the develop branch of easybuild-easyconfigs,
+# change the structure into flat one,
+# and remove the original dirs to be not so space-hungry..
+# -> then we have in 
+# ${easybuild_dir}/easybuild-easyconfigs-develop/flat
+# develop branch of EB
+#
+echo "Cloning easybuild-easyconfigs into ${easybuild_dir}/easybuild-easyconfigs-develop .."
+git clone --single-branch --branch develop https://github.com/easybuilders/easybuild-easyconfigs.git easybuild-easyconfigs-develop >> ${easybuild_dir}/logs/git.log 2>&1 \
+ && echo '.. flattening the structure ..' \
+ && cd easybuild-easyconfigs-develop \
+ && mkdir flat \
+ && cd easybuild \
+ && find . -name \*.eb -exec cp {} ../flat \; \
+ && rm ./easybuild -rf \
+ && rm ./test -rf \
+ && echo 'done.'
 
 # deal with the Singularity image build
 
@@ -178,7 +196,8 @@ ${singularity_command} ${singularity_action} \
   ${container_image_dir}/${singularity_image_name} \
   /scripts/build.sh --easybuild_sourcepath /downloads \
                     --easybuild_buildpath ${easybuild_build_dir} \
-                    --custom_easybuilds_dir /easybuild_custom/${custom_easyconfigs_dir}
+                    --custom_easybuilds_dir /easybuild_custom/${custom_easyconfigs_dir} \
+                    --develop_upstream_dir /easybuild_custom/easybuild-easyconfigs-develop/flat
 
 
 # CLEANUP

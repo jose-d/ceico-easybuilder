@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# hints:
+# this script is executed INSIDE of the container by "do.sh" script.
+
 # parse arguments:
 
 POSITIONAL=()
@@ -18,6 +21,11 @@ while [[ $# -gt 0 ]]; do
       ;;
     --custom_easybuilds_dir)
       custom_easybuilds_dir="$2"
+      shift # past argument
+      shift # past value
+      ;;
+    --develop_upstream_dir)
+      develop_upstream_dir="$2"
       shift # past argument
       shift # past value
       ;;
@@ -80,6 +88,28 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
   echo "command: ${command}"
   eval ${command}
 done < "${stable_list_file}"
+
+#
+# easyconfigs from develop branch of upstream..:
+#
+
+if [ -d "${develop_upstream_dir}" ]; then
+  echo "--develop_upstream_dir specified to ${develop_upstream_dir} .. let's process upstream easyconfigs."
+  upstream_list_file="${SCRIPTPATH}/easybuild_upstream.swlist"
+  echo "processing ${SCRIPTPATH}/easybuild_upstream.swlist as upstream_list_file.."
+  
+  # process the lines in the list..:
+  while IFS='' read -r line || [[ -n "$line" ]]; do
+    echo "line: $line"
+    [[ "$line" =~ ^#.*$ ]] && continue # regexp matching '#' = commented lines we don't care
+    command="eb -r ${develop_upstream_dir}  --buildpath=${easybuild_buildpath} ${develop_upstream_dir}/${line}"
+    echo "================================================================================"
+    echo "command: ${command}"
+    eval ${command}
+  done < "${upstream_list_file}"
+else
+  echo "--develop_upstream_dir - not specified.."
+fi
 
 #
 # site-specific and unstable software:

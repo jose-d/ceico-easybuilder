@@ -1,0 +1,1 @@
+Python-3.7.2-GCCcore-8.2.0.eb --hide-deps=M4,Bison,zlib,help2man,flex,binutils,GCCcore,ncurses,Tcl,bzip2,libreadline,SQLite,libtool,libffi,ncurses,gettext,XZ,Autoconf,Automake,Autotools,GMP --hide-toolchains=GCCcore

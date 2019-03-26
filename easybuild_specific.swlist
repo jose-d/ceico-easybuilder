@@ -3,14 +3,14 @@
 # every line beggining not with '#' character will be appended to this statement as ${line} variable:
 # eb -r --buildpath=${easybuild_buildpath} ${custom_easybuilds_dir}/${line}
 #
-#plc-2.0-intel2018b-Python-2.7.15.eb
-#OpenCV-3.4.5-foss-2018b-Python-3.6.6.eb
-#STREAM-5.10-GCCcore-8.2.0.eb
-#fio-3.12-GCCcore-8.2.0.eb
-#IPython-5.8.0-intel-2018b-Python-2.7.15.eb
-#astropy-2.0.12-foss-2018b-Python-2.7.15.eb
-
-
-
-#GTK+-3.22.30-foss-2018b.eb --hide-deps=Gtkmm,Pangomm,cairomm,at-spi2-atk,at-spi2-core,DBus,libdrm,nettle,GMP,libepoxy,libiconv,Pango,HarfBuzz,cairo,pixman,fontconfig,freetype,expat,Gdk-Pixbuf,Atkmm,ATK,GLibmm,libsigc++,libffi
-#cadabra-2.2.4-foss-2018b.eb --hide-deps=LibUUID,Gtkmm,adwaita-icon-theme,gsettings-desktop-schemas
+IPython-5.8.0-intel-2018b-Python-2.7.15.eb --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,CMake,cURL,expat,flex,fontconfig,freetype,GCCcore,gettext,GMP,gperf,help2man,icc,ifort,imkl,impi,intel,intltool,libffi,libpng,libreadline,libsodium,libtool,libxml2,M4,matplotlib,ncurses,OpenPGM,pkg-config,SQLite,Tcl,Tk,Tkinter,util-linux,X11,XML-Parser,XZ,ZeroMQ,zlib --hide-toolchains=iimpi,iccifort
+astropy-2.0.12-foss-2018b-Python-2.7.15.eb --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,FFTW,flex,future,GCCcore,gettext,GMP,gompi,help2man,hwloc,libffi,libpciaccess,libreadline,libtool,libxml2,M4,ncurses,numactl,OpenBLAS,OpenMPI,ScaLAPACK,SQLite,Tcl,xorg-macros,XZ,zlib --hide-toolchains=gompi,GCCcore
+astropy-2.0.12-intel-2018b-Python-2.7.15.eb --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,flex,future,GCCcore,GMP,help2man,icc,ifort,imkl,impi,libffi,libreadline,libtool,M4,ncurses,SQLite,Tcl,zlib,iimpi --hide-toolchains=iccifort,iimpi
+mesasdk-20170921.eb -r --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,expat,flex,fontconfig,freetype,GCCcore,gettext,gperf,help2man,intltool,libpng,libtool,libxml2,M4,ncurses,pkg-config,util-linux,X11,XML-Parser,XZ,zlib
+mesasdk-20180822.eb -r --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,expat,flex,fontconfig,freetype,GCCcore,gettext,gperf,help2man,intltool,libpng,libtool,libxml2,M4,ncurses,pkg-config,util-linux,X11,XML-Parser,XZ,zlib
+plc-2.0-avx-intel2018b-Python-2.7.15.eb --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,cURL,flex,GCCcore,GMP,help2man,icc,ifort,imkl,impi,intel,libffi,libreadline,libtool,M4,ncurses,SQLite,Tcl,zlib,plc-data --hide-toolchains=iccifort,iimpi
+# OpenCV-3.4.5-foss-2018b-Python-3.6.6.eb
+# STREAM-5.10-GCCcore-8.2.0.eb
+# fio-3.12-GCCcore-8.2.0.eb
+# GTK+-3.22.30-foss-2018b.eb --hide-deps=Gtkmm,Pangomm,cairomm,at-spi2-atk,at-spi2-core,DBus,libdrm,nettle,GMP,libepoxy,libiconv,Pango,HarfBuzz,cairo,pixman,fontconfig,freetype,expat,Gdk-Pixbuf,Atkmm,ATK,GLibmm,libsigc++,libffi
+# cadabra-2.2.4-foss-2018b.eb --hide-deps=LibUUID,Gtkmm,adwaita-icon-theme,gsettings-desktop-schemas
