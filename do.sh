@@ -122,7 +122,7 @@ git clone --single-branch --branch develop https://github.com/easybuilders/easyb
  && cd easybuild-easyconfigs-develop \
  && mkdir flat \
  && cd easybuild \
- && find . -name \*.eb -exec cp {} ../flat \; \
+ && find . -type f -exec cp {} ../flat \; \
  && rm ./easybuild -rf \
  && rm ./test -rf \
  && echo 'done.'
@@ -202,5 +202,7 @@ ${singularity_command} ${singularity_action} \
 
 # CLEANUP
 
-rm -rf ${easybuild_build_dir}	# builddir - should be empty when build was OK.. but if not, lot of things could be there..
-rm -rf ${easybuild_dir}         # the one with git clones..
+rm -rf ${easybuild_build_dir}
+#builddir - should be empty when build was OK.. but if not, lot of things could be there..
+rm -rf ${easybuild_dir}
+# the one with git clones..
