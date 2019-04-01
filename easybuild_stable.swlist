@@ -24,6 +24,8 @@ p/Python/Python-2.7.15-intel-2018b.eb -r --hide-deps=ScaLAPACK,FFTW,gompi,OpenMP
 #IPython( it has non-hidden dep matplotlib)
 i/IPython/IPython-7.2.0-intel-2018b-Python-3.6.6.eb -r --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,CMake,cURL,expat,flex,fontconfig,freetype,gettext,GMP,gperf,help2man,libpng,icc,iccifort,ifort,iimpi,imkl,impi,intltool,libffi,libreadline,libsodium,libtool,libxml2,M4,ncurses,OpenPGM,pkg-config,SQLite,Tcl,Tk,Tkinter,util-linux,X11,XML-Parser,XZ,ZeroMQ,zlib --hide-toolchains=iimpi
 i/IPython/IPython-7.2.0-foss-2018b-Python-3.6.6.eb -r --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,CMake,cURL,expat,flex,fontconfig,freetype,gettext,GMP,gperf,help2man,libpng,icc,iccifort,ifort,iimpi,imkl,impi,intltool,libffi,libreadline,libsodium,libtool,libxml2,M4,ncurses,OpenPGM,pkg-config,SQLite,Tcl,Tk,Tkinter,util-linux,X11,XML-Parser,XZ,ZeroMQ,zlib --hide-toolchains=iimpi
+#matplotlib for 2.7.15
+m/matplotlib/matplotlib-2.2.3-intel-2018b-Python-2.7.15.eb -r --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,expat,flex,fontconfig,freetype,GCCcore,gettext,GMP,gperf,help2man,icc,iccifort,ifort,iimpi,imkl,impi,intel,intltool,libffi,libpng,libreadline,libtool,libxml2,M4,ncurses,ohpc,pkg-config,SQLite,Tcl,Tk,Tkinter,util-linux,X11,XML-Parser,XZ,zlib --hide-toolchains=iccifort,iimpi
 #Mathematica
 m/Mathematica/Mathematica-11.3.0.eb
 #libs - Boost
@@ -40,3 +42,5 @@ h/HPL/HPL-2.3-intel-2019a.eb -r --hide-deps=binutils,Bison,flex,help2man,HPL,icc
 g/git/git-2.19.1-GCCcore-7.3.0.eb -r --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,cURL,expat,flex,gettext,help2man,libtool,libxml2,M4,ncurses,ohpc,XZ,zlib
 #astro
 p/pyfits/pyfits-3.5-intel-2018b-Python-2.7.15.eb -r --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,flex,GMP,help2man,icc,ifort,imkl,impi,intel,libffi,libreadline,libtool,M4,ncurses,ohpc,pyfits,SQLite,Tcl,zlib --hide-toolchains=iccifort,iimpi
+#gnuplot
+g/gnuplot/gnuplot-5.2.5-foss-2018b.eb -r --hide-deps=Autoconf,Automake,Autotools,binutils,Bison,bzip2,cairo,CMake,cURL,DBus,expat,FFTW,flex,fontconfig,foss,freetype,FriBidi,GCC,GCCcore,gettext,GLib,GMP,GObject-Introspection,gompi,gperf,HarfBuzz,help2man,hwloc,intltool,libcerf,libdrm,libffi,libgd,libGLU,libjpeg-turbo,libpciaccess,libpng,libreadline,libtool,libxml2,LLVM,M4,Mako,Mesa,NASM,ncurses,nettle,NSPR,NSS,numactl,OpenBLAS,OpenMPI,Pango,PCRE,pixman,pkg-config,Qt5,ScaLAPACK,SQLite,Tcl,users,util-linux,X11,XML-Parser,xorg-macros,XZ,zlib --hide-toolchains=gompi
