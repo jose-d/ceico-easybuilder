@@ -1,5 +1,8 @@
 #!/bin/bash
 
+my_dir="$(dirname "$0")"
+source "$my_dir/functions.sh"
+
 # parse arguments:
 
 rebuild=false
@@ -21,6 +24,15 @@ while [[ $# -gt 0 ]]; do
     --justshell)
       justshell=true
       shift # past argument
+      ;;
+    --version|-v)
+      versionstring="$2"
+      shift # past argument
+      shift # past value
+      ;;
+    --help|-?|-h)
+      showhelp
+      exit 0	# after showing help we can end this.
       ;;
     *)    # unknown option
       POSITIONAL+=("$1") # save it in an array for later
@@ -58,30 +70,26 @@ singularity_image_name='container.img'
 
 # sw tree host directory
 sw_tree_host_dir='/mnt/local-scratch/u/jose/666'
-sw_tree_system_dir='/sw/local/el7/x86_64'	# = where on the system will be the SW tree finally mounted
 additional_bind_pair_1='/home/soft:/home/soft'	# for intel licensing server etc. if unsed, comment it out in the singularity statement too..
 
 # eb download path
 eb_download_path='/home/users/jose/Downloads'
 
 
-# FUNCTIONS
-
-function check_rc {
-  rc=$1
-  text=$2
-  if [[ "$rc" != "0" ]]; then
-    echo "nonzero RC in ${text}"
-    return 1
-  else
-    return 0
-  fi
-}
-
 # PREPARE
 
 instance_id=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 16 | head -n 1) # random 16-character string indetifying build
 echo "instance_id: ${instance_id}"
+
+# * check if we have version string or we should generate new one:
+
+if [ -z "$versionstring" ]; then
+  versionstring=$(date +"v%y%m%d%H%M")
+fi
+
+sw_tree_system_dir="/sw/local/$versionstring"
+
+echo "versionstring: ${versionstring}"
 
 # * directory for git clones:
 
@@ -103,11 +111,15 @@ our_script_path=$(dirname $our_script)
 
 mkdir -p ${container_image_dir}/logs
 
-# deal with custom easyblocks:
 
 cd ${easybuild_dir}
+
+
+echo "Cloning custom easyconfigs from ${custom_easyconfigs_git_URL} to ${easybuild_dir}.."
 touch ${easybuild_dir}/logs/git.log
 git clone ${custom_easyconfigs_git_URL} >> ${easybuild_dir}/logs/git.log 2>&1
+check_rc $? "git clone ${custom_easyconfigs_git_URL}"
+echo 'done.'
 
 # git clone to have the develop branch of easybuild-easyconfigs,
 # change the structure into flat one,
@@ -142,11 +154,12 @@ fi
 
 if $rebuild || $noimage; then
   if [ -f "${container_image_dir}/${singularity_image_name}" ]; then
-    # if image is already there and there is --rebuild flag, remove the image first:
+    echo "INFO: purging old image.."
     rm -f ${container_image_dir}/${singularity_image_name}
   fi
   cd ${container_image_dir}
   touch ${container_image_dir}/logs/git.log
+  echo "Cloning ${singularity_image_git_URL} into ${container_image_dir}.."
   git clone ${singularity_image_git_URL} >> ${container_image_dir}/logs/git.log 2>&1
   cd ${container_image_dir}/${singularity_image_git_projectname}
   touch ${container_image_dir}/logs/singularity.log
